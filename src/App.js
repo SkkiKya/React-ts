@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CountriesJson from './countries.json';
 import TopPage from './pages/TopPage';
@@ -14,6 +14,8 @@ function App() {
     newRecovered: "-",
     totalRecovered: "-",
   });
+  const [allCountriesData, setAllCountriesData] = useState([]);
+
   const getCountryData = () => {
     fetch(`https://api.covid19api.com/country/${country}`)
       .then(res => res.json())
@@ -28,6 +30,13 @@ function App() {
         });
       });
   }
+
+  useEffect(() => {
+    fetch("http://api.covid19api.com/summary")
+      .then(res => res.json())
+      .then(data => setAllCountriesData(data.Countries));
+  }, []);
+
   return (
     <Router>
       <Switch>
@@ -35,7 +44,7 @@ function App() {
           <TopPage CountriesJson={CountriesJson} setCountry={setCountry} getCountryData={getCountryData} countryData={countryData} />
         </Route>
         <Route exact path="/world">
-          <WorldPage />
+          <WorldPage allCountriesData={allCountriesData} />
         </Route>
       </Switch>
     </Router >
