@@ -1,7 +1,6 @@
 
 
 const Selector = (props) => {
-  console.log("Selectorのprops:", props);
   return (
     <>
       <select onChange={e => props.setCountry(e.target.value)}>
