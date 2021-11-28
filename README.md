@@ -1,5 +1,5 @@
 # NetlufyURL
-(https://eloquent-curie-b17aba.netlify.app)[https://eloquent-curie-b17aba.netlify.app]
+[https://eloquent-curie-b17aba.netlify.app]
 
 # Getting Started with Create React App
 
