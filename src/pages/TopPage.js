@@ -1,15 +1,19 @@
 import React from 'react';
 
+import Header from "../components/Header";
 import Title from '../components/Title';
 import Selector from '../components/Selector';
 import Result from '../components/Result';
 
-const TopPage = (props) => {
+const TopPage = ({ CountriesJson, setCountry, getCountryData, countryData }) => {
   return (
-    <div>
-      <Title />
-      <Selector CountriesJson={props.CountriesJson} setCountry={props.setCountry} getCountryData={props.getCountryData} />
-      <Result countryData={props.countryData} />
+    <div className="top-page-container">
+      <div>
+        <Header />
+        <Title />
+        <Selector CountriesJson={CountriesJson} setCountry={setCountry} getCountryData={getCountryData} />
+        <Result countryData={countryData} />
+      </div>
     </div>
   );
 };
