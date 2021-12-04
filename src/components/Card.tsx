@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { CardType } from '../type';
 
-const Card = ({ allCountriesData }) => {
+const Card = ({ allCountriesData }: CardType) => {
 
   return (
     <div className="card-container">

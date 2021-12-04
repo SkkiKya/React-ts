@@ -1,12 +1,7 @@
 import React from 'react';
 
-type SelelctorType = {
-  setCountry: React.Dispatch<React.SetStateAction<string>>,
-  CountriesJson: {
-    Country: string;
-    Slug: string;
-  }[], // 配列構造の[]
-};
+import { SelelctorType } from '../type';
+
 
 const Selector = ({ setCountry, CountriesJson }: SelelctorType) => {
   return (
