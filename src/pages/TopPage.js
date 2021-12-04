@@ -11,7 +11,7 @@ const TopPage = ({ CountriesJson, setCountry, getCountryData, countryData, loadi
       <div>
         <Header />
         <Title />
-        <Selector CountriesJson={CountriesJson} setCountry={setCountry} getCountryData={getCountryData} />
+        <Selector CountriesJson={CountriesJson} setCountry={setCountry} />
         <Result countryData={countryData} loading={loading} />
       </div>
     </div>
